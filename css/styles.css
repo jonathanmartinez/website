@@ -1,16 +1,5 @@
-@font-face {
-  font-family: "Proxima Nova";
-  src: url("../assets/Proxima-Nova-Regular.otf");
-}
-
-@font-face {
-  font-family: "Proxima Nova";
-  src: url("../assets/Proxima-Nova-Bold.otf");
-  font-weight: 500;
-}
-
 * {
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "Inter V", sans-serif;
 }
 
 .text-jon {
@@ -39,4 +28,8 @@ a:hover {
 
 .btn {
   border-radius: 10px;
+}
+
+b {
+  font-weight: 600;
 }
