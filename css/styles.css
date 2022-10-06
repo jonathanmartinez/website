@@ -1,32 +1,26 @@
 @font-face {
-  font-family: "Gilroy";
-  src: url("../assets/Gilroy-Medium.woff") format("woff");
+  font-family: "Proxima Nova";
+  src: url("../assets/Proxima-Nova-Regular.otf");
 }
 
 @font-face {
-  font-family: "Gilroy";
-  src: url("../assets/Gilroy-Bold.woff") format("woff");
+  font-family: "Proxima Nova";
+  src: url("../assets/Proxima-Nova-Bold.otf");
   font-weight: 500;
 }
 
 * {
-  font-family: "Gilroy";
-}
-
-
-.logo{
-  font-family: 'Montserrat';
-  font-size: 1.25rem;
+  font-family: "Proxima Nova", sans-serif;
 }
 
 .text-jon {
-  color: #4d74f5;
+  color: #619276;
 }
 
 .btn-jon {
-   background-color: #4d74f5;
-   color: white;
-   transition: all 0.3s ease 0s;
+  background-color: #619276;
+  color: white;
+  transition: all 0.3s ease 0s;
 }
 
 .btn-jon:hover {
@@ -34,7 +28,16 @@
   color: white;
 }
 
-a, a:hover {
-  color: #4d74f5;
+a,
+a:hover {
+  color: #619276;
   text-decoration: none;
+}
+
+.container {
+  max-width: 768px;
+}
+
+.btn {
+  border-radius: 10px;
 }
