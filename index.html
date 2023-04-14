@@ -50,17 +50,16 @@
     <div class="container">
       <div class="row">
         <div class="col-12 py-5 px-4 px-sm-5">
-          <header class="mt-0 mt-sm-4 mb-5">
-            <div class="d-flex align-items-center">
+          <header class="mb-4">
+            <div class="d-flex align-items-center justify-content-between">
               <img
                 src="assets/profile_photo.jpg"
-                height="100"
+                height="90"
                 alt="Profile photo"
                 class="rounded-circle"
               />
-              <div class="ms-3">
-                <h4><b>Jon Martinez</b></h4>
-                <p class="text-muted">Software engineer & entrepreneur</p>
+
+              <div class="text-nowrap">
                 <a href="mailto:jonmrtnz1@gmail.com" href=""
                   ><i class="far fa-envelope text-jon fs-5"></i
                 ></a>
@@ -78,30 +77,55 @@
                 ></a>
               </div>
             </div>
-            <h4 class="mt-5">
-              <b>Hey there</b>
+          </header>
+
+          <div class="mt-5 mb-4">
+            <button
+              class="btn px-4 py-2 btn-light bold"
+              id="hey-btn-tab"
+              onclick="toggle('hey')"
+            >
+              Hey
+            </button>
+            <button
+              class="btn px-4 py-2 text-muted"
+              id="about-btn-tab"
+              onclick="toggle('about')"
+            >
+              About
+            </button>
+            <button
+              class="btn px-4 py-2 text-muted"
+              id="side-projects-btn-tab"
+              onclick="toggle('side-projects')"
+            >
+              Side projects
+            </button>
+          </div>
+
+          <div class="col-12" id="hey-content-tab">
+            <h4>
+              <b>I'm Jon Martinez</b>
               <span class="lh-lg fw-normal text-muted">
-                — I’m a software engineer & entrepreneur from Spain, currently
+                — a software engineer & entrepreneur from Spain, currently
                 living in sunny Los Angeles, California.</span
               >
             </h4>
-          </header>
-          <button
-            class="btn px-3 py-2 btn-light"
-            id="aboutBtn"
-            onclick="toggle()"
-          >
-            <b>About</b>
-          </button>
-          <button
-            class="btn px-3 py-2 text-muted"
-            id="sideProjectsBtn"
-            onclick="toggle()"
-          >
-            <b>Side projects</b>
-          </button>
-          <hr class="mb-4" style="color: gray" />
-          <div class="col-12" id="about">
+
+            <div class="mt-5">
+              <a
+                href="mailto:jonmrtnz1@gmail.com"
+                class="btn btn-dark btn-jon px-4 py-2 rounded-pill lh-lg text-nowrap"
+                ><b>Get in touch <i class="fas fa-arrow-right ms-2"></i></b
+              ></a>
+              <p class="text-muted mt-3">
+                <i class="fas fa-circle text-jon me-3 small"></i>Local time:
+                <span id="clock"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 d-none" id="about-content-tab">
             <p class="lh-lg text-muted">
               My name is Jon and I work remotely as a Front-end developer. I'm
               passionate about modern JavaScript technologies (React/Node) and
@@ -123,26 +147,14 @@
               <a target="_blank" href="https://www.mondraker.com">Mondraker</a>.
             </p>
             <p class="lh-lg text-muted">
-              I love meeting new people, so feel free to reach me out.
+              I love connecting with new people, so feel free to reach me out.
             </p>
-            <div
-              class="d-flex align-items-start align-items-sm-center flex-column flex-sm-row justify-content-sm-between mt-5"
-            >
-              <a
-                href="mailto:jonmrtnz1@gmail.com"
-                class="btn btn-dark btn-jon px-4 py-2 rounded-pill lh-lg text-nowrap"
-                ><b>Get in touch <i class="fas fa-arrow-right ms-2"></i></b
-              ></a>
-              <p class="text-muted mt-3">
-                Local time: <span id="clock"></span>
-              </p>
-            </div>
           </div>
 
-          <div class="col-12 d-none lh-lg" id="side-projects">
+          <div class="col-12 d-none lh-lg" id="side-projects-content-tab">
             <p class="text-muted mb-5">
-              Besides my main software engineering job, I love to create other
-              projects in order to improve and learn new skills:
+              Besides my full-time software engineering job, I like to get
+              involved in some side projects that keep me learning new things:
             </p>
 
             <a target="_blank" href="https://codefile.io" class="mb-1 text-dark"
@@ -159,7 +171,7 @@
               ><b>Medium <i class="fas fa-arrow-right ms-2"></i></b
             ></a>
             <p class="text-muted">
-              A personal blog where I write some technical articles.
+              A blog where I write some technical articles.
             </p>
           </div>
         </div>
@@ -170,7 +182,7 @@
   <footer class="container text-center">
     <div class="row">
       <div class="col-12">
-        <p class="my-4">
+        <p class="my-4 text-muted">
           made with <i class="fas fa-heart mx-1"></i> on a plain HTML
         </p>
       </div>
@@ -188,13 +200,21 @@
     tick();
     setInterval(() => tick(), 1000);
 
-    function toggle() {
-      document.getElementById("sideProjectsBtn").classList.toggle("btn-light");
-      document.getElementById("sideProjectsBtn").classList.toggle("text-muted");
-      document.getElementById("side-projects").classList.toggle("d-none");
-      document.getElementById("about").classList.toggle("d-none");
-      document.getElementById("aboutBtn").classList.toggle("text-muted");
-      document.getElementById("aboutBtn").classList.toggle("btn-light");
+    function toggle(id) {
+      [...document.querySelectorAll("[id$=btn-tab]")].map((elem) => {
+        elem.classList.remove("btn-light");
+        elem.classList.add("text-muted");
+        elem.classList.remove("bold");
+      });
+
+      [...document.querySelectorAll("[id$=content-tab]")].map((elem) => {
+        elem.classList.add("d-none");
+      });
+
+      document.getElementById(`${id}-btn-tab`).classList.add("btn-light");
+      document.getElementById(`${id}-btn-tab`).classList.remove("text-muted");
+      document.getElementById(`${id}-btn-tab`).classList.add("bold");
+      document.getElementById(`${id}-content-tab`).classList.remove("d-none");
     }
   </script>
 </html>

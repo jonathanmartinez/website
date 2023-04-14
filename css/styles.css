@@ -30,6 +30,7 @@ a:hover {
   border-radius: 10px;
 }
 
-b {
+b,
+.bold {
   font-weight: 600;
 }
