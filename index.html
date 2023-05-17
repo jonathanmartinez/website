@@ -47,10 +47,10 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container px-4 px-sm-5">
       <div class="row">
-        <div class="col-12 py-5 px-4 px-sm-5">
-          <header class="mb-4">
+        <div class="col-12 pt-3 pb-5">
+          <header class="mb-0 mb-sm-3 py-5">
             <div class="d-flex align-items-center justify-content-between">
               <img
                 src="assets/profile_photo.jpg"
@@ -79,40 +79,16 @@
             </div>
           </header>
 
-          <div class="mt-5 mb-4">
-            <button
-              class="btn px-4 py-2 btn-light bold"
-              id="hey-btn-tab"
-              onclick="toggle('hey')"
-            >
-              Hey
-            </button>
-            <button
-              class="btn px-4 py-2 text-muted"
-              id="about-btn-tab"
-              onclick="toggle('about')"
-            >
-              About
-            </button>
-            <button
-              class="btn px-3 px-sm-4 py-2 text-muted"
-              id="side-projects-btn-tab"
-              onclick="toggle('side-projects')"
-            >
-              Side projects
-            </button>
-          </div>
-
           <div class="col-12" id="hey-content-tab">
+            <h3>I'm Jon Martinez</h3>
             <h4>
-              <b>I'm Jon Martinez</b>
-              <span class="lh-lg fw-normal text-muted">
-                — a software engineer & entrepreneur from Spain, currently
+              <span class="lh-lg fw-normal text-muted small">
+                — A software engineer & entrepreneur from Spain, currently
                 living in sunny Los Angeles, California.</span
               >
             </h4>
 
-            <div class="mt-5">
+            <div class="my-5">
               <a
                 href="mailto:jonmrtnz1@gmail.com"
                 class="btn btn-dark btn-jon px-4 py-2 rounded-pill lh-lg text-nowrap"
@@ -126,6 +102,7 @@
           </div>
 
           <div class="col-12 d-none" id="about-content-tab">
+            <h3 class="mb-4">About</h3>
             <p class="lh-lg text-muted">
               My name is Jon and I work remotely as a Front-end developer. I'm
               passionate about modern JavaScript technologies (React/Node) and
@@ -149,45 +126,90 @@
             <p class="lh-lg text-muted">
               I love connecting with new people, so feel free to reach me out.
             </p>
+            <h3 class="text-end">✌️</h3>
           </div>
 
           <div class="col-12 d-none lh-lg" id="side-projects-content-tab">
+            <h3 class="mb-4">Projects</h3>
             <p class="text-muted mb-5">
               Besides my full-time job, I like to get involved in some side
               projects that keep me learning new things:
             </p>
 
-            <a target="_blank" href="https://codefile.io" class="mb-1 text-dark"
-              ><b>Codefile <span class="ms-1">--></span></b></a
-            >
-            <p class="text-muted mb-5">
-              An online code editor to share & edit code with other developers.
-            </p>
+            <div class="d-flex align-items-top justify-content-start">
+              <img
+                src="assets/codefile_logo.png"
+                height="60"
+                alt="Profile photo"
+                class="rounded-3"
+              />
+              <div class="ms-3">
+                <a
+                  target="_blank"
+                  href="https://codefile.io"
+                  class="mb-1 text-dark mt-0"
+                  ><b>Codefile <span class="ms-1">--></span></b></a
+                >
+                <p class="text-muted mb-5">
+                  An online code editor to share & edit code with other
+                  developers.
+                </p>
+              </div>
+            </div>
 
-            <a
-              target="_blank"
-              href="https://jon-martinez.medium.com"
-              class="mb-1 text-dark"
-              ><b>Medium <span class="ms-1">--></span></b></a
-            >
-            <p class="text-muted">
-              A blog where I write some technical articles.
-            </p>
+            <div class="d-flex align-items-top justify-content-start">
+              <img
+                src="assets/medium_logo.png"
+                height="60"
+                alt="Profile photo"
+                class="rounded-3"
+              />
+              <div class="ms-3">
+                <a
+                  target="_blank"
+                  href="https://jon-martinez.medium.com"
+                  class="mb-1 text-dark"
+                  ><b>Medium <span class="ms-1">--></span></b></a
+                >
+                <p class="text-muted">
+                  A blog where I write some technical articles.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center mt-5">
+        <div
+          class="mt-5 mb-4 col-auto border rounded-pill position-fixed bg-white px-0"
+          style="bottom: 0"
+        >
+          <button
+            class="btn px-4 py-2 bold btn-light rounded-pill"
+            id="hey-btn-tab"
+            onclick="toggle('hey')"
+          >
+            Hey
+          </button>
+          <button
+            class="btn px-4 py-2 text-muted rounded-pill"
+            id="side-projects-btn-tab"
+            onclick="toggle('side-projects')"
+          >
+            Projects
+          </button>
+          <button
+            class="btn px-4 py-2 text-muted rounded-pill"
+            id="about-btn-tab"
+            onclick="toggle('about')"
+          >
+            About
+          </button>
         </div>
       </div>
     </div>
   </body>
-
-  <footer class="container text-center">
-    <div class="row">
-      <div class="col-12">
-        <p class="my-4 text-muted">
-          made with <i class="fas fa-heart mx-1"></i> on a plain HTML
-        </p>
-      </div>
-    </div>
-  </footer>
 
   <script>
     function tick() {
