@@ -49,3 +49,10 @@ b,
 .bold {
   font-weight: 600;
 }
+
+.btn-jon-light,
+[id$="btn-tab"]:active,
+[id$="btn-tab"]:hover {
+  background-color: #f8f9fa !important;
+  border: 1px solid #f8f9fa !important;
+}

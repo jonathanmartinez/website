@@ -186,7 +186,7 @@
           style="bottom: 0"
         >
           <button
-            class="btn px-4 py-2 bold btn-light rounded-pill"
+            class="btn px-4 py-2 bold btn-jon-light rounded-pill"
             id="hey-btn-tab"
             onclick="toggle('hey')"
           >
@@ -224,7 +224,7 @@
 
     function toggle(id) {
       [...document.querySelectorAll("[id$=btn-tab]")].map((elem) => {
-        elem.classList.remove("btn-light");
+        elem.classList.remove("btn-jon-light");
         elem.classList.add("text-muted");
         elem.classList.remove("bold");
       });
@@ -233,7 +233,7 @@
         elem.classList.add("d-none");
       });
 
-      document.getElementById(`${id}-btn-tab`).classList.add("btn-light");
+      document.getElementById(`${id}-btn-tab`).classList.add("btn-jon-light");
       document.getElementById(`${id}-btn-tab`).classList.remove("text-muted");
       document.getElementById(`${id}-btn-tab`).classList.add("bold");
       document.getElementById(`${id}-content-tab`).classList.remove("d-none");
